@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NAMANI YASHWANTH — Full Stack Developer, AI Innovator & Creative Designer. Building exceptional digital experiences with cutting-edge technologies." />
+  <meta name="keywords" content="NAMANI YASHWANTH, Full Stack Developer, AI Developer, React, Node.js, Portfolio" />
+  <meta name="author" content="NAMANI YASHWANTH" />
+  <meta property="og:title" content="NAMANI YASHWANTH | Full Stack Developer & AI Innovator" />
+  <meta property="og:description" content="Transforming ideas into exceptional digital experiences." />
+  <meta property="og:type" content="website" />
+
+  <title>NAMANI YASHWANTH | Full Stack Developer & AI Innovator</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+</head>
+<body>
+
+  <!-- ── Page Loader ───────────────────────────────────────── -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-logo">NY</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" style="width:0%"></div>
+    </div>
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- ── Noise Overlay ─────────────────────────────────────── -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ── Aurora Background ─────────────────────────────────── -->
+  <div class="aurora-bg" aria-hidden="true">
+    <div class="aurora-layer aurora-1"></div>
+    <div class="aurora-layer aurora-2"></div>
+    <div class="aurora-layer aurora-3"></div>
+  </div>
+
+  <!-- ── Star Field Canvas ─────────────────────────────────── -->
+  <canvas id="star-canvas" aria-hidden="true"></canvas>
+
+  <!-- ── Particle Canvas ───────────────────────────────────── -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ── Mouse Spotlight ───────────────────────────────────── -->
+  <div class="mouse-spotlight" aria-hidden="true"></div>
+
+  <!-- ── Scroll Progress Bar ───────────────────────────────── -->
+  <div class="scroll-progress" role="progressbar" aria-label="Scroll progress"></div>
+
+  <!-- ── Custom Cursor ─────────────────────────────────────── -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       NAVIGATION
+       ══════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" aria-label="Home">NY</a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    </ul>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO SECTION
+       ══════════════════════════════════════════════════════ -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-container">
+
+      <!-- Left Content -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Available for Work — 2026
+        </div>
+
+        <h1 class="hero-name">
+          NAMANI
+          <span>YASHWANTH</span>
+        </h1>
+
+        <div class="hero-typed-wrap" aria-live="polite">
+          <span class="hero-typed-prefix">I'm a </span>
+          <span class="hero-typed" id="hero-typed"></span>
+          <span class="hero-cursor" aria-hidden="true"></span>
+        </div>
+
+        <p class="hero-tagline">
+          <em>"Transforming Ideas Into Exceptional Digital Experiences."</em>
+          <br />
+          Crafting high-performance web applications, AI-driven solutions, and seamless user experiences that leave a lasting impression.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary" id="hero-explore-btn">
+            <i class="fas fa-rocket"></i>
+            Explore My Work
+          </a>
+          <a href="#" class="btn btn-secondary" id="hero-resume-btn" onclick="alert('Resume download coming soon!')">
+            <i class="fas fa-download"></i>
+            Download Resume
+          </a>
+          <a href="#contact" class="btn btn-ghost" id="hero-contact-btn">
+            <i class="fas fa-envelope"></i>
+            Let's Connect
+          </a>
+        </div>
+
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/yashwanth-namani" target="_blank" rel="noopener" class="hero-social-link" aria-label="LinkedIn" id="hero-linkedin">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="hero-social-link" aria-label="GitHub" id="hero-github">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:namaniyashwanth4443@gmail.com" class="hero-social-link" aria-label="Email" id="hero-email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/917799799736" target="_blank" rel="noopener" class="hero-social-link" aria-label="WhatsApp" id="hero-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right — 3D Profile Card -->
+      <div class="hero-right">
+        <div class="orbit-container" aria-hidden="true">
+          <!-- Orbit Rings -->
+          <div class="orbit-ring orbit-ring-1"></div>
+          <div class="orbit-ring orbit-ring-2"></div>
+          <div class="orbit-ring orbit-ring-3"></div>
+
+          <!-- Orbiting Tech Icons -->
+          <div class="orbit-icon orbit-icon-1">⚛</div>
+          <div class="orbit-icon orbit-icon-2">⬡</div>
+          <div class="orbit-icon orbit-icon-3">🤖</div>
+          <div class="orbit-icon orbit-icon-4">⚡</div>
+          <div class="orbit-icon orbit-icon-5">🎨</div>
+          <div class="orbit-icon orbit-icon-6">🛢</div>
+        </div>
+
+        <div class="profile-card-3d" id="profile-card-3d">
+          <div class="profile-card-inner" id="profile-card-inner">
+            <div class="profile-card-face glass-card">
+
+              <!-- Avatar -->
+              <div class="avatar-wrap">
+                <div class="avatar-ring"></div>
+                <div class="avatar-pulse"></div>
+                <div class="avatar-pulse-2"></div>
+                <div class="avatar-initials" aria-label="NY initials">
+                  <span>NY</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="profile-name-card">NAMANI YASHWANTH</div>
+                <div class="profile-role-card">Full Stack Developer & AI Innovator</div>
+              </div>
+
+              <!-- Quick Stats -->
+              <div class="profile-card-stats">
+                <div class="stat-item">
+                  <span class="stat-value">20+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value">3+</span>
+                  <span class="stat-label">Years Exp</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value">15+</span>
+                  <span class="stat-label">Tech Stack</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" aria-label="Scroll down">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       ABOUT SECTION
+       ══════════════════════════════════════════════════════ -->
+  <section id="about" class="section" aria-label="About">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+        <div class="section-tag" style="margin: 0 auto 1rem;">My Story</div>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <p style="color: var(--text-secondary); max-width:600px; margin: 1rem auto 0; font-size:0.95rem; line-height:1.8;">
+          A passionate developer who transforms complex ideas into elegant digital solutions.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Story -->
+        <div class="about-story reveal-left">
+          <h3>Who <span class="gradient-text">I Am</span></h3>
+          <p>
+            I'm <strong>NAMANI YASHWANTH</strong> — a Full Stack Developer and AI Innovator based in India, driven by a passion for creating extraordinary digital experiences that bridge creativity and technology.
+          </p>
+          <p>
+            With expertise spanning <strong>React, Node.js, MongoDB, and cutting-edge AI technologies</strong>, I build scalable, high-performance applications that solve real-world problems and delight users.
+          </p>
+          <p>
+            My journey started with curiosity — a desire to understand how the web works. Today, I'm building the future of it: from AI-powered platforms to stunning UIs that make users say <strong>"Wow!"</strong>
+          </p>
+
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;">
+            <a href="#contact" class="btn btn-primary" id="about-hire-btn">
+              <i class="fas fa-handshake"></i> Hire Me
+            </a>
+            <a href="#projects" class="btn btn-secondary" id="about-projects-btn">
+              <i class="fas fa-folder-open"></i> View Projects
+            </a>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="about-timeline reveal-right">
+          <div class="timeline-item delay-1">
+            <div class="timeline-line">
+              <div class="timeline-dot"></div>
+              <div class="timeline-connector"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-year">2021</div>
+              <div class="timeline-title">Started Coding Journey</div>
+              <div class="timeline-desc">Discovered the power of programming. Built first HTML/CSS pages and fell in love with web development.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item delay-2">
+            <div class="timeline-line">
+              <div class="timeline-dot"></div>
+              <div class="timeline-connector"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-year">2022</div>
+              <div class="timeline-title">Mastered JavaScript & React</div>
+              <div class="timeline-desc">Deep-dived into modern JavaScript, React ecosystem, and component-driven architecture.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item delay-3">
+            <div class="timeline-line">
+              <div class="timeline-dot"></div>
+              <div class="timeline-connector"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-year">2023</div>
+              <div class="timeline-title">Full Stack Development</div>
+              <div class="timeline-desc">Expanded to backend with Node.js, Express, MongoDB and MySQL. Built first full-stack applications.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item delay-4">
+            <div class="timeline-line">
+              <div class="timeline-dot"></div>
+              <div class="timeline-connector"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-title">AI Integration & Innovation</div>
+              <div class="timeline-desc">Integrated AI technologies including ChatGPT and Gemini APIs into production applications.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item delay-5">
+            <div class="timeline-line">
+              <div class="timeline-dot"></div>
+              <div class="timeline-connector" style="background:transparent;"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-year">2025 — Now</div>
+              <div class="timeline-title">Building the Future</div>
+              <div class="timeline-desc">Creating AI-powered platforms, enterprise solutions, and mentoring the next generation of developers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row" style="margin-top:5rem;">
+        <div class="glass-card stat-card reveal delay-1">
+          <span class="stat-number" data-target="20" data-suffix="+">0+</span>
+          <span class="stat-desc">Projects Completed</span>
+        </div>
+        <div class="glass-card stat-card reveal delay-2">
+          <span class="stat-number" data-target="15" data-suffix="+">0+</span>
+          <span class="stat-desc">Technologies Mastered</span>
+        </div>
+        <div class="glass-card stat-card reveal delay-3">
+          <span class="stat-number" data-target="2000" data-suffix="+">0+</span>
+          <span class="stat-desc">Hours of Coding</span>
+        </div>
+        <div class="glass-card stat-card reveal delay-4">
+          <span class="stat-number" data-target="10" data-suffix="+">0+</span>
+          <span class="stat-desc">Happy Clients</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SKILLS SECTION
+       ══════════════════════════════════════════════════════ -->
+  <section id="skills" class="section" aria-label="Skills">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+        <div class="section-tag" style="margin: 0 auto 1rem;">Tech Arsenal</div>
+        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+        <p style="color:var(--text-secondary); max-width:600px; margin:1rem auto 0; font-size:0.95rem; line-height:1.8;">
+          A curated set of tools, frameworks, and technologies I use to build exceptional products.
+        </p>
+      </div>
+
+      <!-- Frontend -->
+      <div class="skills-section-group">
+        <div class="skills-section-group-title reveal">⚛ Frontend Development</div>
+        <div class="skills-grid">
+
+          <div class="skill-card glass-card reveal delay-1">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap cyan">⚛</div>
+              <div>
+                <div class="skill-name">React.js</div>
+                <div class="skill-level">Advanced</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar cyan" data-width="92"></div>
+            </div>
+            <span class="skill-percent">92%</span>
+          </div>
+
+          <div class="skill-card glass-card reveal delay-2">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap cyan">▲</div>
+              <div>
+                <div class="skill-name">Next.js</div>
+                <div class="skill-level">Proficient</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar cyan" data-width="85"></div>
+            </div>
+            <span class="skill-percent">85%</span>
+          </div>
+
+          <div class="skill-card glass-card reveal delay-3">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap cyan">🌐</div>
+              <div>
+                <div class="skill-name">HTML5 / CSS3</div>
+                <div class="skill-level">Expert</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar cyan" data-width="97"></div>
+            </div>
+            <span class="skill-percent">97%</span>
+          </div>
+
+          <div class="skill-card glass-card reveal delay-4">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap cyan">⚡</div>
+              <div>
+                <div class="skill-name">JavaScript (ES6+)</div>
+                <div class="skill-level">Advanced</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar cyan" data-width="90"></div>
+            </div>
+            <span class="skill-percent">90%</span>
+          </div>
+
+          <div class="skill-card glass-card reveal delay-5">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap cyan">🎨</div>
+              <div>
+                <div class="skill-name">Tailwind CSS</div>
+                <div class="skill-level">Advanced</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar cyan" data-width="88"></div>
+            </div>
+            <span class="skill-percent">88%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="skills-section-group">
+        <div class="skills-section-group-title reveal">⚙ Backend Development</div>
+        <div class="skills-grid">
+
+          <div class="skill-card glass-card reveal delay-1">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap purple">⬡</div>
+              <div>
+                <div class="skill-name">Node.js</div>
+                <div class="skill-level">Advanced</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar purple" data-width="85"></div>
+            </div>
+            <span class="skill-percent">85%</span>
+          </div>
+
+          <div class="skill-card glass-card reveal delay-2">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap purple">🚂</div>
+              <div>
+                <div class="skill-name">Express.js</div>
+                <div class="skill-level">Advanced</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar purple" data-width="82"></div>
+            </div>
+            <span class="skill-percent">82%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="skills-section-group">
+        <div class="skills-section-group-title reveal">🗄 Database</div>
+        <div class="skills-grid">
+
+          <div class="skill-card glass-card reveal delay-1">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap purple">🍃</div>
+              <div>
+                <div class="skill-name">MongoDB</div>
+                <div class="skill-level">Advanced</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar purple" data-width="83"></div>
+            </div>
+            <span class="skill-percent">83%</span>
+          </div>
+
+          <div class="skill-card glass-card reveal delay-2">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap purple">🐬</div>
+              <div>
+                <div class="skill-name">MySQL</div>
+                <div class="skill-level">Proficient</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar purple" data-width="78"></div>
+            </div>
+            <span class="skill-percent">78%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI & Tools -->
+      <div class="skills-section-group">
+        <div class="skills-section-group-title reveal">🤖 AI Technologies & Tools</div>
+        <div class="skills-grid">
+
+          <div class="skill-card glass-card reveal delay-1">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap pink">🤖</div>
+              <div>
+                <div class="skill-name">ChatGPT API</div>
+                <div class="skill-level">Advanced</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar pink" data-width="87"></div>
+            </div>
+            <span class="skill-percent">87%</span>
+          </div>
+
+          <div class="skill-card glass-card reveal delay-2">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap pink">✨</div>
+              <div>
+                <div class="skill-name">Google Gemini</div>
+                <div class="skill-level">Proficient</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar pink" data-width="80"></div>
+            </div>
+            <span class="skill-percent">80%</span>
+          </div>
+
+          <div class="skill-card glass-card reveal delay-3">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap pink">⚙</div>
+              <div>
+                <div class="skill-name">AI Automation</div>
+                <div class="skill-level">Proficient</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar pink" data-width="82"></div>
+            </div>
+            <span class="skill-percent">82%</span>
+          </div>
+
+          <div class="skill-card glass-card reveal delay-4">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap cyan">🐙</div>
+              <div>
+                <div class="skill-name">Git & GitHub</div>
+                <div class="skill-level">Advanced</div>
+              </div>
+            </div>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar cyan" data-width="90"></div>
+            </div>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       PROJECTS SECTION
+       ══════════════════════════════════════════════════════ -->
+  <section id="projects" class="section" aria-label="Projects">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+        <div class="section-tag" style="margin: 0 auto 1rem;">Featured Work</div>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+        <p style="color:var(--text-secondary); max-width:600px; margin:1rem auto 0; font-size:0.95rem; line-height:1.8;">
+          A showcase of my most impactful projects — built with precision, passion, and purpose.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Featured Project 1 -->
+        <div class="project-card reveal" id="proj-1">
+          <div class="project-card-image" style="background: linear-gradient(135deg, #0A192F, #0d1d3a);">
+            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;">
+              <div style="font-size:4rem;">🌾</div>
+              <div style="font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:#fff;text-align:center;">Agriculture & Water<br/>Management AI</div>
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;">
+                <span class="badge badge-cyan">AI Platform</span>
+                <span class="badge badge-purple">Full Stack</span>
+                <span class="badge badge-pink">IoT</span>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link primary" id="proj-1-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="#" class="project-link secondary" id="proj-1-github"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-category">AI-Powered Platform</div>
+            <h3 class="project-title">Agriculture & Water Management AI Platform</h3>
+            <p class="project-desc">
+              An intelligent platform leveraging AI to optimize agricultural water usage, predict crop health, and provide real-time insights for farmers. Features IoT integration, predictive analytics, and smart irrigation control.
+            </p>
+            <div class="project-tech">
+              <span class="badge badge-cyan">React</span>
+              <span class="badge badge-purple">Node.js</span>
+              <span class="badge badge-pink">MongoDB</span>
+              <span class="badge badge-cyan">ChatGPT API</span>
+              <span class="badge badge-purple">IoT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal delay-1" id="proj-2">
+          <div class="project-card-image" style="background: linear-gradient(135deg, #1a0a2e, #2d1b4e);">
+            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;">
+              <div style="font-size:3rem;">🎉</div>
+              <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:#fff;text-align:center;">Event Management<br/>Platform</div>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link primary" id="proj-2-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="#" class="project-link secondary" id="proj-2-github"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-category">Web Application</div>
+            <h3 class="project-title">Event Management Platform</h3>
+            <p class="project-desc">
+              A comprehensive event management system with ticketing, RSVP management, real-time attendee tracking, and an intuitive organizer dashboard.
+            </p>
+            <div class="project-tech">
+              <span class="badge badge-cyan">React</span>
+              <span class="badge badge-purple">Express.js</span>
+              <span class="badge badge-pink">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal delay-2" id="proj-3">
+          <div class="project-card-image" style="background: linear-gradient(135deg, #0a1f1a, #0d2e24);">
+            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;">
+              <div style="font-size:3rem;">🍽</div>
+              <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:#fff;text-align:center;">Premium Restaurant<br/>Website</div>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link primary" id="proj-3-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="#" class="project-link secondary" id="proj-3-github"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-category">Web Design</div>
+            <h3 class="project-title">Premium Restaurant Website</h3>
+            <p class="project-desc">
+              A visually stunning restaurant website with online reservations, interactive menu, and an immersive dining experience presentation.
+            </p>
+            <div class="project-tech">
+              <span class="badge badge-cyan">HTML5</span>
+              <span class="badge badge-purple">CSS3</span>
+              <span class="badge badge-pink">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card reveal delay-3" id="proj-4">
+          <div class="project-card-image" style="background: linear-gradient(135deg, #1a1230, #0a0a1e);">
+            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;">
+              <div style="font-size:3rem;">🌟</div>
+              <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:#fff;text-align:center;">Portfolio<br/>Websites</div>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link primary" id="proj-4-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="#" class="project-link secondary" id="proj-4-github"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-category">UI/UX Design</div>
+            <h3 class="project-title">Portfolio & Branding Websites</h3>
+            <p class="project-desc">
+              Multiple premium portfolio websites crafted for clients — featuring stunning animations, unique design systems, and converting layouts.
+            </p>
+            <div class="project-tech">
+              <span class="badge badge-cyan">React</span>
+              <span class="badge badge-purple">Next.js</span>
+              <span class="badge badge-pink">GSAP</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       EXPERIENCE SECTION
+       ══════════════════════════════════════════════════════ -->
+  <section id="experience" class="section" aria-label="Experience">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+        <div class="section-tag" style="margin: 0 auto 1rem;">My Journey</div>
+        <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+      </div>
+
+      <div class="experience-timeline">
+
+        <div class="exp-item reveal">
+          <div class="exp-date"><span>2025<br/>Present</span></div>
+          <div class="exp-marker"><div class="exp-dot"></div></div>
+          <div class="exp-content glass-card">
+            <div class="exp-role">Full Stack Developer</div>
+            <div class="exp-org">Freelance & Self-Employed</div>
+            <div class="exp-desc">
+              Developing full-stack web applications for clients across industries. Specializing in React frontends with Node.js backends, AI integrations, and performance-optimized deployments.
+            </div>
+            <div class="exp-tags">
+              <span class="badge badge-cyan">React</span>
+              <span class="badge badge-purple">Node.js</span>
+              <span class="badge badge-pink">AI Integration</span>
+              <span class="badge badge-cyan">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item reveal delay-2">
+          <div class="exp-date"><span>2024<br/>2025</span></div>
+          <div class="exp-marker"><div class="exp-dot"></div></div>
+          <div class="exp-content glass-card">
+            <div class="exp-role">AI Solutions Developer</div>
+            <div class="exp-org">Independent Projects</div>
+            <div class="exp-desc">
+              Built and deployed AI-powered applications integrating OpenAI and Google Gemini APIs. Developed automation workflows and intelligent data processing systems.
+            </div>
+            <div class="exp-tags">
+              <span class="badge badge-cyan">ChatGPT API</span>
+              <span class="badge badge-purple">Gemini</span>
+              <span class="badge badge-pink">Python</span>
+              <span class="badge badge-cyan">Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item reveal delay-3">
+          <div class="exp-date"><span>2022<br/>2024</span></div>
+          <div class="exp-marker"><div class="exp-dot"></div></div>
+          <div class="exp-content glass-card">
+            <div class="exp-role">Frontend Developer (Learning Phase)</div>
+            <div class="exp-org">Self-Development & Open Source</div>
+            <div class="exp-desc">
+              Mastered React, JavaScript, and modern CSS techniques. Contributed to open-source projects and built a portfolio of progressively complex web applications.
+            </div>
+            <div class="exp-tags">
+              <span class="badge badge-cyan">React</span>
+              <span class="badge badge-purple">JavaScript</span>
+              <span class="badge badge-pink">CSS3</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SERVICES SECTION
+       ══════════════════════════════════════════════════════ -->
+  <section id="services" class="section" aria-label="Services">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+        <div class="section-tag" style="margin: 0 auto 1rem;">What I Offer</div>
+        <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+        <p style="color:var(--text-secondary); max-width:600px; margin:1rem auto 0; font-size:0.95rem; line-height:1.8;">
+          End-to-end solutions crafted with precision and purpose to elevate your digital presence.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="glass-card service-card reveal delay-1" id="svc-1">
+          <div class="service-icon s1">🌐</div>
+          <h3 class="service-title">Website Development</h3>
+          <p class="service-desc">Crafting stunning, responsive websites that captivate visitors and convert them into customers with pixel-perfect design.</p>
+          <div class="service-features">
+            <span class="service-feature">Custom designs & layouts</span>
+            <span class="service-feature">Mobile-first responsive</span>
+            <span class="service-feature">SEO optimized</span>
+            <span class="service-feature">Fast loading performance</span>
+          </div>
+        </div>
+
+        <div class="glass-card service-card reveal delay-2" id="svc-2">
+          <div class="service-icon s2">⚙</div>
+          <h3 class="service-title">Full Stack Development</h3>
+          <p class="service-desc">Building scalable, end-to-end web applications with robust backends, intuitive frontends, and seamless integrations.</p>
+          <div class="service-features">
+            <span class="service-feature">React / Next.js frontends</span>
+            <span class="service-feature">Node.js / Express backends</span>
+            <span class="service-feature">REST API development</span>
+            <span class="service-feature">Database architecture</span>
+          </div>
+        </div>
+
+        <div class="glass-card service-card reveal delay-3" id="svc-3">
+          <div class="service-icon s3">🤖</div>
+          <h3 class="service-title">AI Integration</h3>
+          <p class="service-desc">Supercharging your applications with cutting-edge AI capabilities — from chatbots to intelligent data processing.</p>
+          <div class="service-features">
+            <span class="service-feature">ChatGPT API integration</span>
+            <span class="service-feature">AI chatbots & assistants</span>
+            <span class="service-feature">Intelligent automation</span>
+            <span class="service-feature">Smart data analytics</span>
+          </div>
+        </div>
+
+        <div class="glass-card service-card reveal delay-4" id="svc-4">
+          <div class="service-icon s4">🎨</div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-desc">Creating breathtaking user interfaces and seamless experiences that users love — blending aesthetics with functionality.</p>
+          <div class="service-features">
+            <span class="service-feature">Figma wireframing</span>
+            <span class="service-feature">Design systems</span>
+            <span class="service-feature">Micro-animations</span>
+            <span class="service-feature">Glassmorphism & modern UI</span>
+          </div>
+        </div>
+
+        <div class="glass-card service-card reveal delay-5" id="svc-5">
+          <div class="service-icon s5">🚀</div>
+          <h3 class="service-title">Landing Pages</h3>
+          <p class="service-desc">High-converting landing pages designed to capture attention, communicate value, and drive meaningful action.</p>
+          <div class="service-features">
+            <span class="service-feature">Conversion-optimized</span>
+            <span class="service-feature">A/B test ready</span>
+            <span class="service-feature">Fast delivery</span>
+            <span class="service-feature">Analytics integrated</span>
+          </div>
+        </div>
+
+        <div class="glass-card service-card reveal delay-6" id="svc-6">
+          <div class="service-icon s6">🏢</div>
+          <h3 class="service-title">Business Websites</h3>
+          <p class="service-desc">Professional business websites that establish credibility, attract leads, and grow your brand online.</p>
+          <div class="service-features">
+            <span class="service-feature">Corporate design</span>
+            <span class="service-feature">CMS integration</span>
+            <span class="service-feature">Contact & lead forms</span>
+            <span class="service-feature">Google Analytics</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       TESTIMONIALS SECTION
+       ══════════════════════════════════════════════════════ -->
+  <section id="testimonials" class="section" aria-label="Testimonials">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+        <div class="section-tag" style="margin: 0 auto 1rem;">Kind Words</div>
+        <h2 class="section-title">Client <span class="gradient-text">Testimonials</span></h2>
+      </div>
+
+      <div class="testimonials-wrapper reveal">
+        <div class="testimonials-track" id="testimonials-track">
+
+          <div class="glass-card testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "YASHWANTH delivered an exceptional website that exceeded all our expectations. His attention to detail, creativity, and technical expertise are truly remarkable. The final product was stunning and drove a 40% increase in our online engagement!"
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">RS</div>
+              <div>
+                <div class="testimonial-name">Rahul Sharma</div>
+                <div class="testimonial-role">CEO, TechVentures India</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Working with YASHWANTH was a game-changer for our restaurant. He built us a gorgeous website with online reservation capabilities. Our bookings went up by 60% within the first month!"
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">AK</div>
+              <div>
+                <div class="testimonial-name">Ananya Kumar</div>
+                <div class="testimonial-role">Owner, The Grand Spice Restaurant</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The AI integration YASHWANTH built for our platform is phenomenal. It automated 70% of our customer support queries and dramatically improved response times. Absolutely brilliant work!"
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">VP</div>
+              <div>
+                <div class="testimonial-name">Vikram Patel</div>
+                <div class="testimonial-role">CTO, AgriTech Solutions</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Professional, punctual, and incredibly talented. YASHWANTH's event management platform has revolutionized how we run our conferences. I can't recommend him highly enough!"
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SM</div>
+              <div>
+                <div class="testimonial-name">Sneha Menon</div>
+                <div class="testimonial-role">Event Director, PrimeEvents</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="testimonials-controls">
+        <button class="testimonial-btn testimonial-prev" id="testimonial-prev" aria-label="Previous testimonial">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="testimonials-dots">
+          <div class="testimonial-dot active" data-index="0"></div>
+          <div class="testimonial-dot" data-index="1"></div>
+          <div class="testimonial-dot" data-index="2"></div>
+          <div class="testimonial-dot" data-index="3"></div>
+        </div>
+        <button class="testimonial-btn testimonial-next" id="testimonial-next" aria-label="Next testimonial">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       CONTACT SECTION
+       ══════════════════════════════════════════════════════ -->
+  <section id="contact" class="section" aria-label="Contact">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom:4rem;">
+        <div class="section-tag" style="margin: 0 auto 1rem;">Get In Touch</div>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        <p style="color:var(--text-secondary); max-width:600px; margin:1rem auto 0; font-size:0.95rem; line-height:1.8;">
+          Have a project in mind? Let's turn your vision into reality. I'm always excited to work on new challenges.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="contact-info reveal-left">
+          <h3>Ready to Build<br/><span class="gradient-text">Something Amazing?</span></h3>
+          <p>Whether you need a stunning website, a powerful web app, or AI-powered features — I'm here to make it happen. Let's talk!</p>
+
+          <div class="contact-items">
+            <div class="glass-card contact-item" id="contact-phone">
+              <div class="contact-item-icon ci-1"><i class="fas fa-phone"></i></div>
+              <div>
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value">
+                  <a href="tel:+917799799736">+91 7799799736</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card contact-item" id="contact-email-item">
+              <div class="contact-item-icon ci-2"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">
+                  <a href="mailto:namaniyashwanth4443@gmail.com">namaniyashwanth4443@gmail.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card contact-item" id="contact-linkedin-item">
+              <div class="contact-item-icon ci-3"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <div class="contact-item-label">LinkedIn</div>
+                <div class="contact-item-value">
+                  <a href="https://www.linkedin.com/in/yashwanth-namani" target="_blank" rel="noopener">linkedin.com/in/yashwanth-namani</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="contact-social">
+            <a href="https://www.linkedin.com/in/yashwanth-namani" target="_blank" rel="noopener" class="contact-social-link" aria-label="LinkedIn" id="contact-social-linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener" class="contact-social-link" aria-label="GitHub" id="contact-social-github">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://wa.me/917799799736" target="_blank" rel="noopener" class="contact-social-link" aria-label="WhatsApp" id="contact-social-whatsapp" style="color:#25d366;">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:namaniyashwanth4443@gmail.com" class="contact-social-link" aria-label="Email" id="contact-social-email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="glass-card contact-form-wrap reveal-right">
+          <form id="contact-form" action="mailto:namaniyashwanth4443@gmail.com" method="get" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="name" name="name" class="form-input" placeholder="Name" required autocomplete="name" />
+                <label for="name" class="form-label">Full Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" class="form-input" placeholder="Email" required autocomplete="email" />
+                <label for="email" class="form-label">Email Address</label>
+              </div>
+            </div>
+            <div class="form-group full">
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject" required />
+              <label for="subject" class="form-label">Subject</label>
+            </div>
+            <div class="form-group full">
+              <textarea id="message" name="body" class="form-textarea" placeholder="Message" required></textarea>
+              <label for="message" class="form-label">Your Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" id="form-submit-btn">
+              <span class="submit-text">
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-logo">NY</div>
+    <p class="footer-copy">
+      © 2026 NAMANI YASHWANTH. Crafted with <span>♥</span> and countless cups of coffee.
+    </p>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <!-- ── Back to Top ────────────────────────────────────── -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ══════════════════════════════════════════════════════
+       SCRIPTS
+       ══════════════════════════════════════════════════════ -->
+  <script src="js/main.js"></script>
+
+  <!-- Additional inline micro-enhancements -->
+  <script>
+    // Ripple effect on buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const rect = this.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.cssText = `
+          position:absolute; border-radius:50%;
+          width:${size}px; height:${size}px;
+          left:${e.clientX - rect.left - size/2}px;
+          top:${e.clientY - rect.top - size/2}px;
+          background:rgba(255,255,255,0.25);
+          transform:scale(0);
+          animation:ripple 0.5s ease-out forwards;
+          pointer-events:none;
+        `;
+        this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 500);
+      });
+    });
+
+    // Add ripple keyframe if not already added
+    if (!document.getElementById('ripple-style')) {
+      const style = document.createElement('style');
+      style.id = 'ripple-style';
+      style.textContent = `@keyframes ripple { to { transform: scale(4); opacity: 0; } }`;
+      document.head.appendChild(style);
+    }
+
+    // Navbar active section highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    
+    const observerNav = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.style.color = '';
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.style.color = 'var(--cyan)';
+            }
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => observerNav.observe(s));
+
+    // Preload fonts & initialize body
+    document.body.style.overflow = 'hidden'; // locked during loader
+  </script>
+</body>
+</html>
